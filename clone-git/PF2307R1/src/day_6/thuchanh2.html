@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="width">Width: </label>
+    <input type="text" id="width"><br><br>
+    <label for="height">Height: </label>
+    <input type="text" id="height">
+    <h1 id="area"></h1>
+    <h2 id="perimeter"></h2>
+    <button onclick="m1()">Click</button>
+</body>
+<script>
+    // bài toán đưa ra: nhập vào 2 số từ bàn phím thông qua thẻ input 
+    // chiều dài và chiều rộng của 1 hình chữ nhật
+    // tính toán diện tích và chu vi
+    // in kết quả ra màn hình bằng thẻ h1 cho diện tích và thẻ h2 cho chu vi
+
+    function m1() {
+        // document: chỉ định đến màn hình hiển thị trang HTML
+        // getElementById(): hàm để gọi đến thành phần có id tương ứng
+        // value: chỉ định thuộc tính muốn lấy của thành phần nói trên
+        let width = +document.getElementById("width").value 
+        let height = +document.getElementById("height").value 
+
+        let area = width * height
+        let peri = (width + height) * 2
+        document.getElementById("area").innerHTML = ("Diện tích hình chữ nhật là: " + area + "m2")
+        document.getElementById("perimeter").innerHTML = ("Chu vi hình chữ nhật là: " + peri + "m")
+    }
+
+</script>
+</html>

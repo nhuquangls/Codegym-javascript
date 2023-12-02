@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="display"></h1>
+</body>
+<script>
+    let arr = new Array(10);
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Math.floor(Math.random()*20) + 1;
+    }
+    document.getElementById("display").innerHTML +=arr
+    arr.sort(function(a, b) {
+        return b - a;
+    });
+    document.getElementById("display").innerHTML += "<br>" + arr
+</script>
+</html>

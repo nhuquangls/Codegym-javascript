@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 1px solid;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="reset()">Reset</button>
+    <div>
+        <table id="table"></table>
+    </div>
+    <h1 id="result"></h1>
+</body>
+<script>
+    let display = "";
+    let rows = +prompt("Nhập hàng");
+    let cols = +prompt("Nhập cột");
+    let count = 0;
+    let canPlay = true;
+    for (let i = 0; i < rows; i++) {
+        display += "<tr>";
+        for (let j = 0; j < cols; j++) {
+            display += `<td id = "${i}${j}"></td>`
+        }
+        display += "</tr>"
+    }
+    document.getElementById("table").innerHTML = display
+
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            let id = i + "" + j;
+            document.getElementById(id).addEventListener("click", function () {
+                let value = document.getElementById(id).innerHTML
+                if (value == "" && canPlay == true) {
+                    if (count % 2 == 0) {
+                        document.getElementById(id).innerHTML = "X"
+                    } else {
+                        document.getElementById(id).innerHTML = "O"
+                    }
+                    checkGameOver();
+                    count++;
+                }
+            });
+        }
+    }
+
+
+    function checkGameOver() {
+        let result = ""
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                if (i + 2 < rows) {
+                    let position1 = document.getElementById(`${i}${j}`).innerHTML
+                    let position2 = document.getElementById(`${i + 1}${j}`).innerHTML
+                    let position3 = document.getElementById(`${i + 2}${j}`).innerHTML
+                    gameOver(position1, position2, position3);
+                }
+                if (j + 2 < cols) {
+                    let position1 = document.getElementById(`${i}${j}`).innerHTML
+                    let position2 = document.getElementById(`${i}${j + 1}`).innerHTML
+                    let position3 = document.getElementById(`${i}${j + 2}`).innerHTML
+                    gameOver(position1, position2, position3);
+                }
+                if (i + 2 < rows && j + 2 < cols) {
+                    let position1 = document.getElementById(`${i}${j}`).innerHTML
+                    let position2 = document.getElementById(`${i + 1}${j + 1}`).innerHTML
+                    let position3 = document.getElementById(`${i + 2}${j + 2}`).innerHTML
+                    gameOver(position1, position2, position3);
+                }
+                if (i - 2 >= 0 && j + 2 < cols) {
+                    let position1 = document.getElementById(`${i}${j}`).innerHTML
+                    let position2 = document.getElementById(`${i - 1}${j + 1}`).innerHTML
+                    let position3 = document.getElementById(`${i - 2}${j + 2}`).innerHTML
+                    gameOver(position1, position2, position3);
+                }
+                if (!canPlay) {
+                    break;
+                }
+            }
+        }
+    }
+    function gameOver(position1, position2, position3) {
+        if (position1 == position2 && position2 == position3 && position3 == position1 && position1 != "") {
+            if (position1 == "X") {
+                result = "X"
+            } else {
+                result = "O"
+            }
+            document.getElementById("result").innerHTML = result + " thắng"
+            canPlay = false;
+        }
+    }
+    function reset() {
+        canPlay = true;
+        count = 0;
+        document.getElementById("result").innerHTML = ""
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                document.getElementById(i + "" + j).innerHTML = ""
+            }
+        }
+    }
+</script>
+
+</html>

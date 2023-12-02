@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Bán kính: </td>
+            <td><input type="text" id="r"></td>
+        </tr>
+        <tr>
+            <td>Đường kính: </td>
+            <td id="d"></td>
+        </tr>
+        <tr>
+            <td>Chu vi: </td>
+            <td id="cv"></td>
+        </tr>
+        <tr>
+            <td>Diện tích: </td>
+            <td id="dt"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="m1()">Calculator</button></td>
+        </tr>
+    </table>
+</body>
+<script>
+    function m1() {
+        let r = +document.getElementById("r").value 
+        let d = r * 2
+        let cv = r * 2 * Math.PI
+        let dt = r * r * Math.PI
+        // lớp Math: là lớp toán học, có sẵn trong Js, 
+        // hỗ trợ các phương thức để thao tác phức tạp trong toán học
+        
+        document.getElementById("d").innerHTML = d
+        document.getElementById("cv").innerHTML = cv.toFixed(3)
+        // hàm toFixed(): là hàm có sẵn, dùng để làm tròn số thập phần
+        // số trong ngoặc tròn là số chữ số cần lấy sau dấu phẩy
+        document.getElementById("dt").innerHTML = dt.toFixed(3)
+    }
+</script>
+</html>

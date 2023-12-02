@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tạo bảng trong html  -->
+    <!-- bảng thường dùng để hiển thị dữ liệu trong trang  -->
+    <table border="1" style="width: 200px; height: 200px;">
+        <!-- tìm hiểu thêm về thuộc tính colspan và rowspan  -->
+        <!-- thuộc tính border: sẽ tạo viền và dòng kẻ cho bảng  -->
+        <!-- thẻ table: quy định phần mã tạo bảng trong html, tạo khung cho bảng  -->
+        <tr>
+            <!-- thẻ tr: tạo các hàng trong bảng  -->
+            <th>Họ</th>
+            <!-- thẻ th: tạo ra ô tiêu đề trang bảng -->
+            <!-- ô tiêu đề: text sẽ được in đậm và căn giữa ngang tự động  -->
+            <th>Tên</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Lê</td>
+            <!-- thẻ th: tạo ra ô chứa dữ liệu trang bảng -->
+            <!-- ô dữ liệu thì chứa và hiển thị text như bình thường  -->
+            <td>Quân</td>
+            <td>29</td>
+        </tr>
+    </table>
+
+    <!-- tạo form trong html  -->
+    <!-- biểu mẫu thường dùng để thu thập dữ liệu của người dùng trang web  -->
+    <form action="#" method="get">
+        <!-- thẻ form: quy định giới hạn thành phần của form  -->
+        <!-- thuộc tính action: quy định địa chỉ gửi dữ liệu đến của form  -->
+        <!-- thuộc tính method: quy định cách dữ liệu được gửi đi  -->
+        <!-- get: dữ liệu ít, không bảo mật, hiển thị trên url  -->
+        <!-- post: dữ liệu nhiều, bảo mật hơn, không hiện, ẩn trong body request  -->
+        <label for="name">Name</label>
+        <!-- thẻ label: gán nhãn cho 1 thành phần html bất kỳ, thường là input  -->
+        <input id="name" type="text">
+        <!-- thuộc tính id: định danh duy nhất cho 1 thành phần html trên 1 trang html  -->
+        <!-- id: không được trùng nhau trên 1 trang html  -->
+        <!-- thuộc tính type: quy định kiểu hiển thị và giá trị được nhận của input  -->
+        <button>Save</button>
+    </form>
+</body>
+</html>

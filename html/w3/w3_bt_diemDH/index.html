@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <div>
+        <label for="toan">Môn Toán</label>
+        <input type="number" id="toan">
+    </div>
+
+    <div>
+        <label for="van">Môn Văn</label>
+        <input type="number" id="van" style="margin-left: 5px;">
+    </div>
+
+    <div>
+        <label for="anh">Môn Anh</label>
+        <input type="number" id="anh" style="margin-left: 5px;">
+    </div>
+
+    <div>
+        <label for="kv">Khu Vực</label>
+        <select id="kv" style="margin-left: 7px;">
+            <option value="0.75">KV1</option>
+            <option value="0.5">KV2</option>
+            <option value="0.25">KV2-NT</option>
+            <option value="0">KV3</option>
+        </select>
+    </div><br>
+    <button onclick="cal()">Tính Điểm</button>
+    <p id="result" style="color: red;"></p>
+</body>
+    <script>
+        function cal() {
+            let toan = parseFloat(document.getElementById("toan").value)
+            let van = parseFloat(document.getElementById("van").value)
+            let anh = parseFloat(document.getElementById("anh").value)
+            let kv = parseFloat(document.getElementById("kv").value)
+            let result = toan + van + anh + kv
+            document.getElementById("result").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + result
+        }
+    </script>
+</html>

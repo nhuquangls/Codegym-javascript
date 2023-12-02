@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin-left: 50px;
+            text-align: right;
+        
+        }
+        td {
+            font-size: 30px;
+        }
+        .td {
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+    <table id="table1"></table><br>
+    <table id="table2"></table><br>
+    <table id="table3"></table><br>
+    <table id="table4"></table>
+</body>
+<script>
+    let result1 = ""
+    for (let i = 0; i < 5; i++) {
+        result1 += "<tr>"
+        for (let j = i; j >= 0; j--) {
+            result1 += "<td>*</td>"
+        }
+        result1 += "</tr>"
+    }
+    document.getElementById("table1").innerHTML = result1
+
+    let result2 = ""
+    for (let i = 0; i < 5; i++) {
+        result2 += "<tr>"
+        for (let j = i; j < 5; j++) {
+            result2 += "<td>*</td>"
+        }
+        result2 += "</tr>"
+    }
+    document.getElementById("table2").innerHTML = result2
+
+    
+
+    let result3 = ""
+    for (let i = 0; i < 5; i++) {
+        result3 += "<tr>"
+        for (let j = i; j >= 0; j--) {
+            result3 += "<td class = 'td'>*</td>"
+        }
+        result3 += "</tr>"
+    }
+    document.getElementById("table3").innerHTML = result3
+
+
+    let result4 = ""
+    for (let i = 0; i < 5; i++) {
+        result4 += "<tr>"
+        for (let j = i; j < 5; j++) {
+            result4 += "<td class = 'td'>*</td>"
+        }
+        result4 += "</tr>"
+    }
+    document.getElementById("table4").innerHTML = result4
+</script>
+</html>

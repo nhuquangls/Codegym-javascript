@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 1px solid;
+        /* border-collapse: collapse; */
+        width: 800px;
+        margin-bottom: 10px;
+      }
+
+      tr,
+      td {
+        border: 1px solid;
+        /* border-collapse: collapse; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="board"></div>
+    <button onclick="m1()">Display</button>
+  </body>
+  <script>
+    function m1() {
+      let data = "<table>";
+      for (let i = 1; i <= 9; i++) {
+        data += "<tr>";
+        for (let j = 2; j <= 9; j++) {
+          data += "<td>";
+          data += j + "x" + i + "=" + j * i;
+          data += "</td>";
+        }
+        data += "</tr>";
+      }
+      data += "</table>";
+      document.getElementById("board").innerHTML = data;
+    }
+  </script>
+</html>

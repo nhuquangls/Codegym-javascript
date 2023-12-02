@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let number = prompt("Input")
+    function tinhGiaiThua(number) {
+        if (number < 0) {
+            return null;
+        } else if (number == 0) {
+            return 1;
+        } else {
+            let result = 1;
+            for (let i = 1; i <= number; i++) {
+                result *= i;
+            }
+            return result;
+        }
+    }
+    alert(`${number}! = ${tinhGiaiThua(number)}`)
+</script>
+</html>

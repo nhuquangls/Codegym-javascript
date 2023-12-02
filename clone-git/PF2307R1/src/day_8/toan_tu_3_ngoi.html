@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // toán tử 3 ngôi: cách viết rút gọn của câu lệnh if...else
+    // ứng dụng để sử dụng điều kiện và qua đó gán giá trị của 1 biến nào đó 
+
+    // sử dụng if else
+    let dk = 5
+    let result = ""
+    if (dk < 3) {
+        result = "Hello"
+    } else {
+        result = "Bye"
+    }
+    console.log("Kết quả của if: " + result)
+
+    // sử dụng toán tử 3 ngôi
+    // cấu trúc của toán tử: 
+    // (BTĐK) ? (kết quả khi BTĐK đúng) : (kết quả khi BTĐK sai)
+    let dk1 = 5
+    let result1 = (dk < 3) ? "Hello" : "Bye"
+    console.log("Kết quả của toán tử 3 ngôi: " + result1)
+
+    // toán tử 3 ngôi lồng nhau
+    let demo = 5
+    let demo1 = 20
+    let result2 = (demo > 3) ? ((demo1 < 10) ? "Hello" : "Bye") : "Hi"
+    console.log("Kết quả của toán tử 3 ngôi lồng: " + result2)
+</script>
+</html>

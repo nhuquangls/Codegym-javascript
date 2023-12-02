@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="showCircle()">
+    <button onclick="run()">Run</button><br>
+    <canvas id="myCanvas" width="1000px" height="700px" style="border:1px solid #d3d3d3;"></canvas>
+</body>
+<script>
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let myCircles = [];
+    let isMoveToLeft = [];
+    class Circle {
+        constructor() {
+            this.x = Math.random() * 1000;
+            this.y = Math.random() * 700;
+            this.radius = Math.random() * 80;
+            this.color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        }
+    }
+    for (let i = 0; i < 30; i++) {
+        myCircles.push(new Circle());
+        isMoveToLeft.push(true);
+    }
+    function createCircle(newCircle) {
+        ctx.beginPath();
+        ctx.arc(newCircle.x, newCircle.y, newCircle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = newCircle.color;
+        ctx.fill();
+    }
+    function showCircle() {
+        myCircles.forEach(function (circle) {
+            createCircle(circle);
+        });
+    }
+    function run() {
+        let run = setInterval(function () {
+            for (let i = 0; i < myCircles.length; i++) {
+                if (isMoveToLeft[i]) {
+                    if (myCircles[i].x < 1000) {
+                        myCircles[i].x += 10;
+                    } else {
+                        isMoveToLeft[i] = false;
+                    }
+                } else {
+                    if (myCircles[i].x > 0) {
+                        myCircles[i].x -= 10;
+                    } else {
+                        isMoveToLeft[i] = true;
+                    }
+                }
+
+            }
+            ctx.clearRect(0, 0, 1000, 700);
+            showCircle();
+        }, 50)
+    }
+
+</script>
+
+</html>

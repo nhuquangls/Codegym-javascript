@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 84px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Calculator</h3>
+    <input type="number" id="number1">
+    <input type="number" id="number2"><br><br>
+    <button onclick="calculator('+')">Cộng</button>
+    <button onclick="calculator('-')">Trừ</button>
+    <button onclick="calculator('*')">Nhân</button>
+    <button onclick="calculator('/')">Chia</button><br>
+    <h3 id="result"></h3>
+</body>
+<script>
+    function calculator(operator) {
+        let number1 = parseFloat(document.getElementById("number1").value);
+        let number2 = parseFloat(document.getElementById("number2").value);
+        let result = 0
+        if (isNaN(number1) || isNaN(number2)) {
+            alert("Error");
+            return;
+        }
+        switch (operator) {
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            case '/':
+                if (number2 === 0) {
+                    alert("Error");
+                    return;
+                }
+                result = number1 / number2;
+                break;
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+</html>

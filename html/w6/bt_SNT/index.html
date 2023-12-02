@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="result"></h3>
+</body>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    let N = prompt("Nhập số lượng SNT: ");
+    let arr = [];
+    let count = 0;
+    let i = 0;
+    while (count < N) {
+        if (isPrime(i)) {
+            arr.push(i);
+            count++;
+        }
+        i++;
+    }
+    document.getElementById("result").innerHTML = arr.join(", ");
+</script>
+</html>

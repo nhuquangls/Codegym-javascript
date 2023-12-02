@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="m1()">Chơi</button>
+</body>
+<script>
+    // Math.random(): trả về giá trị thập phân, 0 => 1
+    // Math.floor(): làm tròn về số nguyên nhỏ hơn gần nhất
+    // Math.round(): làm tròn về số nguyên gần nhất, theo quy tắc toán học
+    // quy tắc làm tròn: > 0.5 làm tròn lên, < 0.5 làm tròn xuống
+    // parseInt(): lấy phần nguyên của 1 số thập phân
+
+    console.log(Math.random())
+    let a = Math.random() * 50
+    let b = Math.random() * 50
+    console.log(a)
+    console.log(b)
+    console.log(Math.floor(a))
+    console.log(Math.round(b))
+
+
+    function m1() {
+        let number1 = +prompt("Nhập 1 số bất kỳ: ")
+        let number2 = +prompt("Nhập 1 số bất kỳ: ")
+        let result
+        if (number1 == number2) {
+            result = number1
+        } else if (number1 < number2) {
+            result = number1 + parseInt(Math.random() * (number2 - number1))
+        } else {
+            result = number2 + parseInt(Math.random() * (number1 - number2))
+        }
+        console.log(result)
+        let count = 2
+        while(count >= 0) {
+            let guest = +prompt("Nhập số bạn đoán: ")
+            if (guest == result) {
+                alert("Bạn đã đoán đúng. Chúc mừng!")
+                break
+            } else if (guest < result) {
+                alert("Bạn đoán số nhỏ quá, mời đoán lại! (Số lần đoán còn:" + count +")")
+            } else {
+                alert("Bạn đoán số lớn quá, mời đoán lại! (Số lần đoán còn:" + count +")")
+            }
+            count--
+        }
+    }
+</script>
+</html>

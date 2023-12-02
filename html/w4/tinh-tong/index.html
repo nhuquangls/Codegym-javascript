@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="result"></h2>
+</body>
+<script>
+    let a = +prompt("Nhập số a")
+    let b = +prompt("Nhập số b")
+    min = 0;
+    max = 0;
+    sum = 0;
+    if (a > b) {
+        min = b;
+        max = a;
+    } else {
+        min = a;
+        max = b;
+    }
+    for (let i = min; i <= max; i++) {
+        sum += i;
+    }
+    document.getElementById("result").innerHTML = "Tổng từ " + min + " đến " + max + " = " + sum
+</script>
+</html>

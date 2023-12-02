@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let number = 2
+    switch(number) { 
+        case 1: 
+            console.log("Đây là số 1")
+            break
+        case 2: 
+            console.log("Đây là số 2")
+            break
+        case 3: 
+            console.log("Đây là số 3")
+            break
+        case 4: 
+            console.log("Đây là số 4")
+            break
+        default:
+            // default là 1 option của switch, có thể có, có thể không
+            // nó được tính như 1 case đặc biệt, không cần so sánh với biến ở switch
+            // default chỉ thực thi khi không có case nào đó đúng 
+            console.log("Không tồn tại case đúng")
+    }
+
+// - Hiếu: 2,3,4
+// - Lộc: 1,2,3,4, default
+// - Quân, P.Tr: default
+// - Quang: 2 
+// - H.Tr: 2, default
+// - Linh, Ngọc: không hiển thị gì
+// - X.Minh: 2,3,4, default
+</script>
+</html>

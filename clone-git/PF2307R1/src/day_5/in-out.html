@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <input type="text" id="in">
+    <button onclick="m1()">Click1</button>
+    <button onclick="m2()">Click2</button>
+    <button onclick="m3()">Click3</button>
+    <button onclick="m4()">Click4</button>
+    <button onclick="m5()">Click5</button>
+    <button onclick="m6()">Click6</button>
+</body>
+<script>
+    // xuất dữ liệu từ Js ra ngoài
+    function m1() {
+        alert("HelloWorld")
+    }
+
+    function m2() {
+        document.write("<h1>CodeGym</h1>")
+    }
+
+    function m3() {
+        console.log("HelloWorld")
+    }
+
+    function m4() {
+        document.getElementById("result1").innerText = "<h1>CodeGym</h1>"
+        document.getElementById("result2").innerHTML = "<h1>CodeGym</h1>"
+    }
+
+    // nhập dữ liệu từ bàn phím vào Js
+    function m5() {
+        let a = prompt("Nhập gì đó: ")
+        alert(a)
+    }
+
+    function m6() {
+        let a = document.getElementById("in").value
+        alert(a)
+    }
+</script>
+</html>

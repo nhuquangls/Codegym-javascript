@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // tạo lớp
+    class Animal {
+        name
+        age
+        gender
+        color
+
+        constructor(name, age, gender, color) {
+            this.name = name
+            this.age = age
+            this.gender = gender
+            this.color = color
+        }
+
+        // tạo 2 phương thức
+        move(diChuyen) {
+            console.log(this.name + " đang di chuyển bằng cách " + diChuyen)
+        }
+
+        makeNoise(sound) {
+            if (sound == "") {
+                console.log(this.name + " không kêu")
+            } else{
+                console.log(this.name + " đang kêu " + sound)
+            }
+        }
+    }
+
+    // tạo đối tượng
+    let snake = new Animal("Snake", 1, "Female", "green")
+    let cat = new Animal("Cat", 3, "Male", "white")
+    let gian = new Animal("Gián", 0.1, "Male", "black")
+    // gọi phương thức
+    snake.move("trườn")
+    cat.move("chạy")
+    snake.makeNoise("phì phì")
+    cat.makeNoise("meow meow")
+    gian.makeNoise("")
+
+    // giá trị thuộc tính name
+    console.log(snake.name)
+    snake.name = "Rùa"
+    console.log(snake.name)
+    
+    // thực tế, việc thay đổi trực tiếp thông qua thuộc tính k được khuyến khích
+    // OOP khuyến khích sử dụng qua cặp phương thức: getter / setter
+    // getter: dùng để lấy giá trị của thuộc tính
+    // setter: dùng để thay đổi giá trị của thuộc tính
+
+    class Brick {
+        width
+        height
+
+        constructor(width, height) {
+            this.width = width
+            this.height = height
+        }
+
+        getWidth() {
+            return this.width
+        }
+
+        setWidth(width) {
+            this.width = width
+        }
+    }
+
+    console.log("------------------")
+    let brick = new Brick(10, 5)
+    console.log(brick.width)
+    console.log(brick.getWidth())
+    brick.setWidth(15)
+    console.log(brick.width)
+    console.log(brick.getWidth())
+</script>
+</html>

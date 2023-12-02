@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 95px;
+            height: 50px;
+        }
+        img {
+            vertical-align: top;
+        }
+        
+    </style>
+</head>
+
+<body onload="fillAll()">
+    <audio id="nhacnen">
+        <source src="sound/beat.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="point">
+        <source src="sound/money.mp3" type="audio/mpeg">
+    </audio>
+
+    <canvas id="myCanvas" width="500px" height="500px"
+        style="border: 1px solid;"></canvas>
+    <img src="img/volume.png" alt="volume" onclick="audioControl()" id="volume"><br>
+    <button onclick="start()">Start</button>
+    <button onclick="moveLeft()">◄</button>
+    <button onclick="moveRight()">►</button>
+    <button onclick="rotate()">Rotate</button>
+    <button onclick="speedUp()" id="down">Down</button><br>
+    <h1 id="score"></h1>
+    
+</body>
+<script>
+    const audio = document.getElementById("nhacnen");
+    const audio2 = document.getElementById("point");
+    audio.addEventListener("ended", function () {
+        audio.currentTime = 0;
+        audio.play();
+    });
+</script>
+<script src="js/class/boxes.js"></script>
+<script src="js/class/shaped.js"></script>
+<script src="js/class/LShaped.js"></script>
+<script src="js/class/TShaped.js"></script>
+<script src="js/class/ZShaped.js"></script>
+<script src="js/class/SquareShaped.js"></script>
+<script src="js/class/IShaped.js"></script>
+<script src="checkVar.js"></script>
+<script src="index.js"></script>
+
+</html>

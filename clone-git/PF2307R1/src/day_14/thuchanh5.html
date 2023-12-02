@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="daoMang()">Click me</button>
+</body>
+<script>
+    function daoMang() {
+        let n = +prompt("Nhập độ dài mảng muốn tạo: ")
+        let arr = []
+        for(let i = 0; i < n; i++) {
+            let data = +prompt("Nhập vào số thứ " + (i+1) + " :")
+            arr.push(data)
+        }
+        console.log(arr)
+
+        // cách 1: dùng for
+        for (let i = 0; i <= arr.length/2; i++) {
+            let temp = arr[i]
+            arr[i] = arr[(arr.length - 1) - i]
+            arr[(arr.length - 1) - i] = temp
+        }
+
+        // cách 2: dùng while
+        let first = 0
+        let last = arr.length - 1
+        while(first < last) {
+            let temp = arr[first]
+            arr[first] = arr[last]
+            arr[last] = temp
+            first++
+            last--
+        }
+        console.log(arr)
+    }
+</script>
+</html>

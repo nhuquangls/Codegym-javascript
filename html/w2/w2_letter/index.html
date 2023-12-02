@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="name">Tên người gửi</label>
+    <input type="text" id="name"><br>
+    
+    <label for="location">Địa điểm</label>
+    <input type="text" id="location" style="margin-left: 32px;"><br>
+
+    <label for="date">Ngày</label>
+    <input type="date" id="date" style="margin-left: 56px;"><br>
+    <button onclick="letter()" style="margin-left: 95px;">Gửi</button>
+</body>
+    <script>
+        function letter() {
+            let name = document.getElementById("name").value;
+            let location = document.getElementById("location").value;
+            let dateInput = document.getElementById("date").value.split('-');
+            let date = dateInput[2];
+            let month = dateInput[1];
+            let year = dateInput[0];
+            document.write("<i>" + name + " thương nhớ,<br><br>Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn.<br><br>Có phải em thật tệ hại, khi cứ nghĩ đến anh thật nhiều, thật lâu và nhất là mỗi khi đêm xuống? Em hứa sẽ sẽ cố gắng triệu triệu lần hơn thế. Nhưng hơn tất cả, em chỉ mong một ngày nào đó, anh sẽ tự hào về em, như tự hào về vợ của anh, và mẹ của các con anh (ít nhất là 2 nhé, em vừa mới quyết định đấy!). Em nhớ thật nhiều cảm giác mỗi đêm anh ôm em và ru em ngủ trong vòng tay. Đêm nay, em chỉ muốn được gần bên anh… và anh biết không, trái tim em đang đau đớn đến nhường nào.<br><br>Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều.<br><br>" + location + ", Ngày " + date + " Tháng " + month + " Năm " +year + ". </i>");
+        }
+    </script>
+</html>

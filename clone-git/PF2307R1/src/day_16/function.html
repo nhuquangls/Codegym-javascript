@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // hàm không tham số, không g.trị trả về
+    // trong ngoặc tròn, không chứa tên tham số, trong phần thân không chứa từ khóa return
+    // hàm không có giá trị trả về tương đương giá trị là undefined
+    function m1() {
+        alert("CodeGym")
+    }
+    m1()
+
+    // hàm có tham số, không g.trị trả về
+    function m2(a) {
+        alert(a)
+    }
+    m2("HelloWorld")
+
+    // hàm không tham số, có g.trị trả về
+    function m3() {
+        return "PF2307R1"
+    }
+    let str = m3()
+    alert(str)
+    
+    // hàm có tham số, có g.trị trả về: thực tế, đây thường là hàm được sử dụng nhiều nhất
+    function m4(a) {
+        return a + "World"
+    }
+    let str1 = m4("Bye")
+    // giá trị "Bye" được truyền vào tham số của hàm nói trên, được gọi là đối số
+    // tham số là biến sinh ra khi khởi tạo, viết hàm
+    // đối số là giá trị truyền vào tham số khi gọi hàm
+    // tên hàm + đối số nếu cần: lời gọi hàm để thực thi khối lệnh ở thân hàm
+    alert(str1)
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="quanlysanpham.css" />
+    </head>
+  <body onload="displayAllProduct()">
+    <h1>Add new product</h1>
+    <form id="form-add">
+      <input type="text" id="name" placeholder="New name product" />
+      <input type="text" id="price" placeholder="New price product" />
+      <input type="text" id="quantity" placeholder="New quantity product" />
+      <input type="text" id="image" placeholder="New image product" /><br>
+      <button onclick="add()">Add</button>
+    </form>
+    <div id="form-edit">
+        <input type="text" id="edit" />
+        <button onclick="editPost()">Update</button>
+      </div>
+    <h1>Display all product</h1>
+    <div id="result"></div>
+  </body>
+  <script src="product.js"></script>
+  <script src="quanlysanpham.js"></script>
+</html>

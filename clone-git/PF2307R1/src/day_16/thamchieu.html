@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function m1(a,b) {
+        let temp = a
+        a = b 
+        b = temp
+    }
+
+    function m2(arr) {
+        let temp = arr[0]
+        arr[0] = arr[1]
+        arr[1] = temp
+    }
+
+    // kiểu dữ liệu của number1 và number2 là số
+    // thuộc kiểu dữ liệu nguyên thủy (primitive)
+    let number1 = 5
+    let number2 = 50 
+
+    // kiểu dữ liệu của array là object
+    // thuộc kiểu dữ liệu object - đối tượng (không nguyên thủy)
+    let array = [5,50]
+
+    m1(number1,number2)
+    m2(array)
+
+    console.log(number1)
+    console.log(number2)
+    console.log(array[0])
+    console.log(array[1])
+</script>
+</html>

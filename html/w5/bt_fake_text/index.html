@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Type any thing</h1>
+        <textarea id="text" cols="50" rows="10"></textarea>
+    </div>
+</body>
+<script>
+    let arr = ['H', 'E', 'L', 'L', 'O', ' ','W','O', 'R', 'L', 'D']
+    count = 0;
+    str = "";
+    document.getElementById("text").addEventListener("input", function(){
+        if (count >= arr.length) {
+            count = 0;
+            str = "";
+        }
+        str += arr[count];
+        document.getElementById("text").value = str;
+        count++;
+    });
+</script>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="displayAll()">
+    <button onclick="humanEat(adam)">Adam eat</button>
+    <button onclick="humanSay(adam)">Adam say</button>
+    <button onclick="humanEat(eva)">Eva eat</button>
+    <button onclick="humanSay(eva)">Eva say</button>
+
+    <h1 id="display"></h1>
+    <h1 id="appleInfo"></h1>
+</body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        decrease() {
+            this.weight--;
+        }
+        isEmpty() {
+            return this.weight === 0;
+        }
+    }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        isMale() {
+            if (gender == "male") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        setGender(gender) {
+            this.gender = gender;
+        }
+        checkApple(apple) {
+            return !apple.isEmpty();
+        }
+        eat(apple) {
+            if (this.checkApple(apple)) {
+                apple.decrease();
+                this.weight++;
+            }
+        }
+        say(str) {
+            alert(str);
+        }
+        getName() {
+            return this.name;
+        }
+        setName(str) {
+            this.name = str;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+    let apple1 = new Apple();
+    let adam = new Human("Adam", "Male", 60);
+    let eva = new Human("Eva", "Female", 40);
+    let data = ""
+    function displayHuman(human) {
+        data +=  `Name: ${human.getName()} <br>
+                Gender: ${human.gender} <br>
+                Weight: ${human.getWeight()} <br><br>`
+
+    }
+    function displayApple(apple) {
+        data += `Apple weight: ${apple.getWeight()}`
+    }
+    function displayAll() {
+        data = ""
+        displayHuman(adam);
+        displayHuman(eva);
+        displayApple(apple1);
+        document.getElementById("display").innerHTML = data
+    }
+    function humanEat(human) {
+        human.eat(apple1);
+        displayAll();
+    }
+    function humanSay(human) {
+        if (human.checkApple(apple1)) {
+            alert("I can eat")
+        } else {
+            alert("I can't eat")
+        }
+    }
+</script>
+
+</html>

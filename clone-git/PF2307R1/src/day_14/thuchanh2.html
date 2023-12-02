@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="value">
+    <button onclick="searchFruit()">Search</button>
+    <h2 id="result"></h2>
+</body>
+<script>
+    let arr = ["10", "20", "30", "40"]
+    function searchFruit() {
+        let data = "Không tìm thấy"
+        let value = +document.getElementById("value").value 
+        for(let i = 0; i < arr.length; i++) {
+            if (arr[i] == value) {
+                data = "Vị trí của từ " + value + " là: " + i
+            }
+        }
+        document.getElementById("result").innerHTML = data
+    }
+</script>
+</html>

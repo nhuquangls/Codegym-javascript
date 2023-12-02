@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="label-money">Nhập số tiền </label>
+    <input type="number" id="money" style="margin-left: 4px;">
+    <label for="money" id="label-money">VND</label><br>
+
+    <label for="label-interestRate">Nhập lãi suất </label>
+    <input type="number" id="interestRate">
+    <label for="interestRate" id="label-interestRate">%</label><br>
+
+    <label for="time">Nhập số năm</label>
+    <input type="number" name="" id="time"><br>
+    <button onclick="calculator()">Tính</button>
+    <p id="result"></p>
+
+</body>
+<script>
+    function calculator() {
+        let a = parseFloat(document.getElementById("money").value);
+        let b = parseFloat(document.getElementById("interestRate").value);
+        let c = parseInt(document.getElementById("time").value);
+        let interest = a * b / 100;
+        let totalAmount = a + c * interest;
+        document.getElementById("result").innerHTML = "Sau " + c + " năm số tiền cả gốc lẫn lãi là: " + totalAmount + "VND";
+    }
+</script>
+
+</html>

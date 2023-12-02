@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px; 
+            height: 600px; 
+            border: 1px solid; 
+            border-collapse: collapse;
+        }
+
+        tr, td {
+            border: 1px solid; 
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2"></td>
+            <!-- thuộc tính colspan: dùng để hợp 2 hay nhiều ô trên cùng hàng  -->
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td rowspan="2"></td>
+             <!-- thuộc tính rowspan: dùng để hợp 2 hay nhiều ô trên cùng cột  -->
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        
+        </tr>
+    </table>
+</body>
+</html>

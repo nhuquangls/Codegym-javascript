@@ -1,0 +1,40 @@
+button {
+    background-color: rgb(5, 180, 5);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+  }
+
+  table {
+    width: 650px;
+  }
+
+  #action {
+    width: 30%;
+    text-align: right;
+    color: red;
+    font-size: 18px;
+  }
+
+  #title {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  input {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(155, 155, 118);
+  }
+
+  #form-add {
+    border-radius: 7px;
+    width: 450px;
+    height: 200px;
+    text-align: center;
+    padding-top: 35px;
+    background-color: rgb(235, 235, 227);
+  }

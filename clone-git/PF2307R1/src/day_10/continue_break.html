@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // break: khi gặp break, vòng lặp gần nhất với nó sẽ dừng lại, ngay lập tức
+    // tức là không phụ thuộc điều kiện lặp mà sẽ dừng luôn
+    for(let i = 0; i < 10; i++) {
+        if (i == 5) {
+            break
+        }
+        console.log(i)
+    }
+    console.log("--------------")
+
+    // continue: khi gặp continue, vòng lăp hiện tại sẽ bỏ qua và thực thi phần tăng bước lặp
+    // tức là khối lệnh sau continue sẽ không thực thi trong lần lặp đó
+    for(let i = 0; i < 10; i++) {
+        if (i == 5) {
+            continue
+        }
+        console.log(i)
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="play">Chơi</button>
+    <h2 id="result"></h2>
+</body>
+<script>
+    document.getElementById("play").addEventListener("click", function () {
+        let maxNumber = prompt("Nhập số lớn nhất");
+        let random = parseInt(Math.random() * maxNumber);
+        let i = 2;       
+        while (i >= 0) {
+            let chooseNumber = prompt("Nhập số dự đoán");
+            if (chooseNumber == random) {
+                document.getElementById("result").innerHTML = "Đoán đúng";
+                break;
+            } else if (chooseNumber < random) {
+                alert("Đoán sai, số đã chọn bé hơn, còn " + i + " lần dự đoán");
+               
+            } else {
+                alert("Đoán sai, số đã chọn lớn hơn, còn " + i + " lần dự đoán");
+            }
+            i --;
+        }
+    });
+</script>
+
+</html>

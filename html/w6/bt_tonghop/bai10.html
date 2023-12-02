@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="display"></h1>
+</body>
+<script>
+    let arr = ['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd']
+    document.getElementById("display").innerHTML = arr
+    let input = prompt("Input")
+    function checkStr(str) {
+        let count = 0;
+        arr.forEach(function(arr) {
+            if (str === arr) {
+                count++;
+            }
+        });
+        return count;
+    }
+    alert(checkStr(input))
+</script>
+</html>

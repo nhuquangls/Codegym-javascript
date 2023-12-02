@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="turnOnLamp()">Turn On</button>
+    <button onclick="turnOffLamp()">Turn Off</button><br>
+    <h1 id="status"></h1>
+
+</body>
+<script>
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+        turnOn() {
+            this.status = true;
+        }
+        turnOff() {
+            this.status = false;
+        }
+        showStatus() {
+            if(this.status) {
+                document.getElementById("status").innerHTML = "Status: On"
+            } else {
+                document.getElementById("status").innerHTML = "Status: Off"
+            }
+        }
+    }
+    class SwitchButton {
+        constructor() {
+            this.status = false;
+        }
+        connectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+        switchOff() {
+            this.lamp.turnOff();
+        }
+        switchOn() {
+            this.lamp.turnOn();
+        }
+    }
+
+    let lamp1 = new ElectricLamp();
+    let button1 = new SwitchButton();
+    button1.connectToLamp(lamp1);
+    function turnOnLamp() {
+        button1.switchOn();
+        button1.lamp.showStatus();
+    }
+    function turnOffLamp() {
+        button1.switchOff();
+        button1.lamp.showStatus();
+    }
+</script>
+</html>

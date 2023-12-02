@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1000px" height="650px" 
+    style="border: 1px solid;"></canvas>
+    <img src="food3.jpg" id="img"
+    style="width: 100px; height: 100px; border: 1px solid;" alt="">
+</body>
+<script>
+    let ctx = document.getElementById("canvas")
+    let ctxDraw = ctx.getContext("2d")
+    ctxDraw.fillStyle = "red"
+    ctxDraw.fillRect(50, 50, 200, 120)
+    ctxDraw.fillStyle = "blue"
+    ctxDraw.strokeRect(350, 50, 200, 120)
+
+    ctxDraw.beginPath()
+    ctxDraw.arc(300, 300, 50, 0, Math.PI*2)
+    ctxDraw.fill()
+    ctxDraw.closePath()
+
+    ctxDraw.beginPath()
+    ctxDraw.arc(300, 500, 50, 0, Math.PI*2)
+    ctxDraw.fill()
+    ctxDraw.closePath()
+
+    ctxDraw.beginPath()
+    ctxDraw.moveTo(50, 300)
+    ctxDraw.lineTo(150, 400)
+    ctxDraw.moveTo(50, 300)
+    ctxDraw.lineTo(50, 400)
+    ctxDraw.moveTo(50, 400)
+    ctxDraw.lineTo(150, 400)
+    ctxDraw.stroke()
+    ctxDraw.closePath()
+
+
+    let img = document.getElementById("img")
+    img.onload = function() {
+          ctxDraw.drawImage(img, 500, 250, 100,100)
+    }
+  
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // gán phức hợp: kết hợp của các toán tử toán học và phép gán
+    let num1 = 10
+    let result = num1 + 10
+    num1 = result 
+
+    let num2 = 10
+    console.log(num2)
+    num2 = num2 + 10
+    console.log(num2)
+
+    let num3 = 10
+    console.log(num3)
+    num3 += 10 // <=> num3 = num3 + 10
+    console.log(num3)
+
+    // tương tự như ví dụ: /= <=> / và = ; -= <=> - và =
+
+    // toán tử tăng giảm
+    // tăng giảm tiền tố: ký hiệu toán tử sẽ đứng trước số hạng tác động
+    // độ ưu tiên của toán tử tiền tố sẽ cao hơn các toán tử và hàm khác
+    // vd: ++10 ; --20
+    // tăng giảm hậu tố: ký hiệu toán tử sẽ đứng sau số hạng tác động
+    // ngược lại, hậu tố có độ ưu tiên thấp hơn
+    // vd: 10++ ; 20--
+
+    // toán tử ++ sẽ tăng 1 đơn vị của biến có giá trị số
+    // toán tử -- sẽ giảm 1 đơn vị của biến cố giá trị số
+
+    let a = 5
+    console.log("Giá trị của a là: " + ++a)
+    console.log(a)
+
+    let b = 5
+    console.log("Giá trị của b là: " + b++)
+    console.log(b)
+
+    let m = 5
+    let n = ++m 
+    let o = n++
+    console.log(m + ", " + n + ", " + o)
+</script>
+</html>

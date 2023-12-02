@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button onclick="turnOnLamp()">Turn on</button>
+<button onclick="turnOffLamp()">Turn off</button>
+<button onclick="setEnergy()">Set energy</button>
+<h1 id="status"></h1>
+
+<body>
+
+</body>
+<script>
+    class Battery {
+        energy
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy;
+        };
+
+        getEnergy() {
+            return this.energy;
+        };
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+
+    };
+
+    class FlashLamp {
+        battery
+        status
+        constructor(battery) {
+            this.battery = battery;
+            this.status = false;
+        }
+
+        setBattery(battery) {
+            this.battery = battery;
+        };
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        };
+
+        getStatus() {
+            if (this.status) {
+                return "Lighting";
+            } else {
+                return "Not lighting";
+            }
+        };
+
+        turnOn() {
+            this.status = true;
+            this.lighting = setInterval(() => {
+                if (this.battery.getEnergy() === 0) {
+                    this.turnOff();
+                    clearInterval(lighting);
+                }
+                this.battery.decreaseEnergy();
+                this.showInfo();
+            }, 500);
+
+        };
+
+        turnOff() {
+            this.status = false;
+            clearInterval(this.lighting);
+            this.showInfo();
+        }
+        showInfo() {
+            let data = `Flashlamp Info: <br> 
+                        Status: ${this.getStatus()} <br> 
+                        Energy: ${this.getBatteryInfo()}`
+            document.getElementById("status").innerHTML = data;
+        }
+    };
+
+    let battery = new Battery(10);
+    let lamp = new FlashLamp(battery);
+    function turnOnLamp() {
+        lamp.turnOn();
+    }
+    function turnOffLamp() {
+        lamp.turnOff();
+    }
+    function setEnergy() {
+        let energy = prompt("Input");
+        lamp.battery.setEnergy(energy);
+        lamp.showInfo();
+    }
+</script>
+
+</html>

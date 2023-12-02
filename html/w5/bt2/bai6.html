@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checkNumber()">Check number</button>
+    <h1 id="display"></h1>
+</body>
+<script>
+    let arr = new Array(10);
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Math.floor(Math.random()*20) + 1;
+    }
+    document.getElementById("display").innerHTML = arr
+    function checkNumber() {
+        let number = parseInt(prompt("Nhập số: "));
+        let inArray = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (number == arr[i]) {
+                inArray = true;
+            }
+        }
+        if (inArray == true) {
+            alert("V is in the array")
+        } else {
+            alert("V is not in the array")
+        }
+    }
+</script>
+</html>

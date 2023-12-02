@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // khai báo lớp ES5: function
+    function Student(name, age, gender) {
+        this.name = name
+        this.age = age
+        this.gender = gender 
+
+        this.goToSchool = function() {
+            console.log(this.name + " đang đến trường!")
+        }
+    }
+
+    // khai báo 1 đối tượng thuộc lớp Student
+    let student1 = new Student("Trang", 29, "Nữ")
+    // từ khóa new: dùng đến gọi đến hàm khởi tạo của lớp
+
+    // ở dưới là đang sử dụng tên đối tượng gọi và 
+    // thực thi phương thức của đối tượng đó
+    student1.goToSchool()
+</script>
+</html>

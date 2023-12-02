@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="result"></h2>
+    <h2 id="result2"></h2>
+    <h2 id="result3"></h2>
+</body>
+<script>
+    let result = "1, 1";
+    let a = 1;
+    let b = 1;
+    for (let i = 2; i < 20; i++) {
+        let c = a + b;
+        result += ", " + c;
+        a = b;
+        b = c;
+    }
+    document.getElementById("result").innerHTML = "20 số đầu tiên trong dãy Fibonacci: " + result;
+    //bài 2 ---------------------------------------------------------------------
+    a = 1;
+    b = 1;
+    for (let i = 2; i < 20; i++) {
+        let c = a + b;
+        if (c % 5 == 0) {
+            document.getElementById("result2").innerHTML = "Số đầu tiên chia hết cho 5: " + c;
+            break;
+        }
+        a = b;
+        b = c;
+    }
+    //Bài 3 --------------------------------------------------------------------
+    let result3 = 2;
+    a = 1;
+    b = 1;
+    for (let i = 2; i < 20; i++) {
+        let c = a + b;
+        result3 += c;
+        a = b;
+        b = c;
+    }
+    document.getElementById("result3").innerHTML = "Tổng 20 số đầu tiên trong dãy Fibonacci: " + result3;
+
+</script>
+
+</html>

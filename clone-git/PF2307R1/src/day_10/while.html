@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // // while
+    // let string = prompt("Nhập");
+    // while (string != "quit") {
+    //   console.log(string);
+    //   string = prompt("Nhập");
+    // }
+
+    let i = 5
+    while(i < 3) {
+        console.log("While " + i)
+        i--
+    }
+
+    let j = 5
+    do {
+        console.log("Do...While " + j)
+        j--
+    } while(j < 3)
+
+    // nhập mk iphone, tối đa 5 lần, sau đó có thông báo khóa 10p
+    let mk
+    let count = 0
+    do {
+        mk = prompt("Nhập")
+        if (mk === "123456") {
+            alert("Thành công")
+            break
+        } else {
+            count++
+        }
+    } while(count < 5)
+    if (count === 5) {
+        alert("Bạn đã nhập 5 lần, khóa máy 10p!")
+    }
+
+    // tổng 10 số chẵn đầu tiên
+    let check = 10
+    let k = 1
+    let sum = 0
+    while(k < check) {
+        sum += (k*2)
+        console.log(sum)
+        k++
+    }
+
+  </script>
+</html>

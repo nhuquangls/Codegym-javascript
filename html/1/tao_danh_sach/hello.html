@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu chú Q hem?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #question {
+            font-size: 36px;
+            font-weight: bold; /* In đậm */
+            margin-bottom: 20px;
+        }
+        #yesBtn, #noBtn {
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold; /* In đậm */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="question">Yêu chú Q hem?</div>
+        <button id="yesBtn" onclick="showLoveMessage()">Có</button>
+        <button id="noBtn" onclick="moveNoButton()">Không</button>
+    </div>
+
+    <script>
+        function showLoveMessage() {
+            var container = document.getElementById("container");
+            container.innerHTML = "<p style='font-size: 28px; font-weight: bold;'>I love chú Q too.</p>";
+        }
+
+        function moveNoButton() {
+            var noBtn = document.getElementById("noBtn");
+            var xPos = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            var yPos = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+            noBtn.style.position = "absolute";
+            noBtn.style.left = xPos + "px";
+            noBtn.style.top = yPos + "px";
+        }
+    </script>
+</body>
+</html>

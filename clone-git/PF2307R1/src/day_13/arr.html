@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // khai báo mảng
+    // c1: array literal - ngoặc vuông
+    let arr1 = [] // khai báo mảng rỗng
+    console.log(arr1.length)
+    let arr2 = [1,2,3] // khai báo mảng, tạo các giá trị trong mảng
+
+    // c2: new object - sử dụng từ khóa new - lớp Array trong Js
+    let arr3 = new Array(3) // khai báo mảng và độ dài của nó => khai báo đúng
+    console.log(arr3.length)
+    let arr4 = new Array (1,2,3) // khải báo mảng và các phần tử của nó => khai báo được chấp nhận
+    // giống trường hợp: a = 10
+    console.log("------------------")   
+
+    // xác định độ dài của mảng => thông qua length: là 1 thuộc tính của đối tượng mảng
+    // các hàm có sẵn của mảng trong Js => sử dụng các phương thức của đối tượng mảng 
+    let arr = [11,22,33,44,55]
+    console.log(arr)
+    console.log("Độ dài của mảng, số lượng các phần tử: " + arr.length)
+    console.log("Phần tử thứ 3 có giá trị là: " + arr[2])
+    console.log("Phần tử đứng ở index số 3 là: " + arr[3])
+    // truy xuất phần tử: tên mảng + ngoặc vuông - trong ngoặc là index mà muống lấy giá trị
+    console.log("------------------")  
+
+    // duyệt mảng: lấy giá trị và thực thi nhiệm vụ nào đó: in giá trị của phần tử trong mảng
+    console.log(arr)
+    for(let i = 0; i < arr.length; i++) {
+        console.log("Vị trí phần tử là: " + i)
+        console.log("Giá trị phần tử tương ứng là: " + arr[i])
+    }
+    console.log("------------------")  
+
+    // lấy index của mảng bằng for in
+    console.log(arr)
+    for(let index in arr) {
+        console.log(index)
+    }
+
+    // lấy các giá trị của mảng bằng for of
+    console.log(arr)
+    for(let value of arr) {
+        console.log(value)
+    }
+</script>
+</html>

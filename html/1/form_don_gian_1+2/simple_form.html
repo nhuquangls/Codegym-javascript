@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 500px;
+            border-width: 10px 20px 10px 20px;
+            border-style: solid;
+            border-color: rgb(200, 241, 247);
+        }
+        #checkbox {
+            margin-left: 60px;
+            margin-top: -34px;
+            color: orange;
+        }
+        #music {
+            margin-left: 10px;
+        }
+        #reading {
+            margin-left: 16px;
+        }
+        #email {
+            margin-top: 10px;
+            margin-left: 24px;
+            margin-bottom: -10px;
+        }
+        h2 {
+            text-align: center;
+            padding: 1px 1px 1px 1px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            background-color: orangered;
+            color: white;
+        }
+        #div-form {
+            margin: 10px 10px 10px 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div id="div-form">
+            <h2>SỞ THÍCH CỦA BẠN</h2>
+
+            <label for="name">Họ và tên</label>
+            <input type="text" name="name" id="name" required><br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <p>Sở thích</p>
+        
+            <div id="checkbox">
+                <input type="checkbox" name="hobbies" id="sport" value="Thể thao">
+                <label for="sport">Thể thao</label>
+
+                <input type="checkbox" name="hobbies" id="music" value="Âm nhạc">
+                <label for="music">Âm nhạc</label>
+
+                <input type="checkbox" name="hobbies" id="reading" value="Đọc sách">
+                <label for="reading">Đọc sách</label><br>
+
+                <input type="checkbox" name="hobbies" id="surfing" value="Lướt web">
+                <label for="surfing">Lướt web</label>
+
+                <input type="checkbox" name="hobbies" id="gaming" value="Chơi game">
+                <label for="gaming">Chơi game</label>
+
+                <input type="checkbox" name="hobbies" id="movie" value="Điện ảnh">
+                <label for="movie">Điện ảnh</label><br>
+
+                <input type="checkbox" name="hobbies" id="travel" value="Du lịch">
+                <label for="travel">Du lịch</label><br><br>
+
+                <button type="submit">Gửi thông tin</button>
+                <button type="reset">Nhập lại</button>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

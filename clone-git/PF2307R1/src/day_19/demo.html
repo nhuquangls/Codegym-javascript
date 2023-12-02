@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+<script>
+    let div1 = document.getElementById("div1")
+    // document: màn hình trình duyệt, tài liệu HTML mà đang build
+    div1.innerText = "<h2>HelloWorld</h2>"
+    // innerText, style: các thuộc tính của thành phần DOM tương ứng trên trang HTML
+    // thành phần được xác định thông qua id của thành phần
+    // phương thức getElementById(id): giúp truy cập đến thành phần HTML tương ứng vs id
+    div1.style.color = "red"
+    div1.style.fontWeight = "bold"
+    let div2 = document.getElementById("div2")
+    div2.innerHTML = "<h2>HelloWorld</h2>"
+
+    let btn = document.createElement("button")
+    let btn1 = document.createElement("button")
+    let br = document.createElement("br")
+    btn.innerHTML = "Clickme10"
+    btn1.innerHTML = "Clickme1"
+    div1.appendChild(br)
+    div1.appendChild(btn)
+    div1.appendChild(btn1)
+
+    let arr = document.getElementsByTagName("button")
+    
+    for(let i = 0; i < arr.length; i++) {
+        if (arr[i].innerHTML === "Clickme") {
+            arr[i].innerHTML = "CodeGym"
+        }
+    }
+</script>
+</html>

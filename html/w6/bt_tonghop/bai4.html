@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="tinhDienTich()">Diện tích</button>
+    <button onclick="tinhChuVi()">Chu vi</button>
+</body>
+<script>
+    function tinhDienTich() {
+        let a = prompt("Nhập chiều dài")
+        let b = prompt("Nhập chiều rộng")
+        alert(`Diện tích là: ${a * b}`)
+    }
+    function tinhChuVi() {
+        let a = prompt("Nhập bán kính") 
+        alert(`Chu vi là: ${a * 2 * Math.PI}`)
+    }
+</script>
+</html>

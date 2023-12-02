@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // khai báo lớp ES6: class
+    class Student {
+        name 
+        age 
+        gender 
+
+        // hàm constructor là hàm khởi tạo của lớp Student1
+        constructor(name, age, gender) {
+            this.name = name
+            this.age = age 
+            this.gender = gender
+        }
+
+        goToSchool() {
+            console.log(this.name + " đang đến trường!")
+        }
+    }
+
+    // tạo đối tượng
+    let student2 = new Student("Minh", 21, "Nam")
+    student2.goToSchool()
+</script>
+</html>

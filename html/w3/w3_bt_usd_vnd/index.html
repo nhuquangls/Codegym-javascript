@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            display: flex;
+        }
+        .class-div {
+            display: flex;
+            flex-direction: column;
+            width: 10%;
+            text-align: center;
+        }
+        #div2 {
+            margin-left: 10px;
+        }
+        #div3 {
+            margin-left: 10px;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <div class="class-div">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount">
+        </div>
+        <div class="class-div" id="div2">
+            <label for="from">From Currency</label>
+            <select id="from">
+                <option value="VND">VietNam</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div class="class-div" id="div3">
+            <label for="to">To Currency</label>
+            <select id="to">
+                <option value="USD">USD</option>
+                <option value="VND">VietNam</option>
+            </select>
+        </div>
+        <button id="convert">Convert</button>
+    </div>
+    <p id="result">Result: </p>
+
+</body>
+<script>
+    let from = document.getElementById("from")
+    let to = document.getElementById("to")
+    from.addEventListener("change", function() {    //select1 thay đổi option
+        if (from.selectedIndex == 0) {
+            to.selectedIndex = 0;
+        } else {
+            to.selectedIndex = 1;
+        }
+    });
+    to.addEventListener("change", function() {      //select2 thay đổi optiom
+        if (to.selectedIndex == 0) {
+            from.selectedIndex = 0;
+        } else {
+            from.selectedIndex = 1;
+        }
+    });
+
+    //click convert
+    let convert = document.getElementById("convert").addEventListener("click", function() {
+        if (from.selectedIndex == 0) {
+            let result = parseInt(document.getElementById("amount").value) / 23000;
+            document.getElementById("result").innerHTML = "Result: " + result + " USD";
+        } else {
+            let result = parseInt(document.getElementById("amount").value) * 23000;
+            document.getElementById("result").innerHTML = "Result: " + result + " VND";
+        }
+    });
+</script>
+
+</html>

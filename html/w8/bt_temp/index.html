@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Temperature {
+        constructor(value) {
+            this.value = value
+        }
+        celsiusToFahrenheit() {
+            return this.value * 1.8 + 32;
+        }
+        celsiusToKenvin() {
+            return this.value + 273.15;
+        }
+    }
+    let temp = new Temperature();
+    temp.value = 25;
+    alert(`${temp.value}°C \n${temp.celsiusToFahrenheit()}°F \n${temp.celsiusToKenvin()}°K`);
+</script>
+</html>

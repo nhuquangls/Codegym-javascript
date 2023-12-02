@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="before"></h1>
+    <h1 id="after"></h1>
+</body>
+<script>
+    let arr = []
+    for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 100) + 1)
+    }
+    document.getElementById("before").innerHTML = arr
+    function reverseArr(arr) {
+        let temp = 0;
+        mid = parseInt(arr.length/2);
+        for (let i = 0; i < mid; i++) {
+            temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        document.getElementById("after").innerHTML = arr
+    }
+    reverseArr(arr);
+</script>
+</html>

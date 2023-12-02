@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 95px;
+            height: 50px;
+        }
+        #button {
+            margin-right: 50px;
+        }
+
+        img {
+            vertical-align: top;
+        }
+    </style>
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body onload="fillAll()">
+    <div id="div-all">
+        <header>
+            <div class="header-element">
+                <a href="../index.html">
+                    <img src="../img/logo.svg" alt="logo" id="logo">
+                </a>
+            </div>
+            <div class="header-element" id="search">
+                <input type="text" id="search-input" placeholder="Nhập tên game...">
+                <img src="../img/search-regular-24.png" alt="search" class="icon-element" id="search-icon">
+            </div>
+            <div class="header-element">
+                <img src="../img/tip.svg" alt="tip" class="icon-element">
+                <h3>Hướng dẫn</h3>
+            </div>
+            <div class="header-element">
+                <img src="../img/play.svg" alt="play" class="icon-element">
+                <h3>Video</h3>
+            </div>
+            <div class="header-element">
+                <img src="../img/notifications.svg" alt="noti" class="icon-element" id="noti">
+            </div>
+            <div class="header-element">
+                <img src="../img/user.svg" alt="user" class="icon-element">
+                <h3>Đăng nhập</h3>
+            </div>
+        </header>
+        <div class="main-menu">
+            <ul class="menu">
+                <div style="display: flex; align-items: center;">
+                    <img src="../img/menu.png" alt="menu" class="icon-element">
+                    <p style="color: yellow;">Danh mục</p>
+                </div>
+                <li>Game Hay</li>
+                <li>Game Hot</li>
+                <li>Game Mới</li>
+                <li>Game Y8</li>
+                <li>Game 2 người</li>
+                <li>Pokemon</li>
+                <li>Trắc nghiệm</li>
+                <li>Among Us</li>
+                <li>Pikachu</li>
+                <li>Thời trang</li>
+            </ul>
+        </div>
+        <audio id="nhacnen">
+            <source src="./sound/beat.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="point">
+            <source src="./sound/money.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="currentGame">
+            <canvas id="myCanvas" width="500px" height="500px" style="border: 1px solid;"></canvas>
+            <img src="./img/volume.png" alt="volume" onclick="audioControl()" id="volume"><br>
+            <div id="button">
+                <button onclick="start()">Start</button>
+                <button onclick="moveLeft()">◄</button>
+                <button onclick="moveRight()">►</button>
+                <button onclick="rotate()">Rotate</button>
+                <button onclick="speedUp()" id="down">Down</button><br>
+                <h1 id="score"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const audio = document.getElementById("nhacnen");
+    const audio2 = document.getElementById("point");
+    audio.addEventListener("ended", function () {
+        audio.currentTime = 0;
+        audio.play();
+    });
+</script>
+<script src="./js/class/boxes.js"></script>
+<script src="./js/class/shaped.js"></script>
+<script src="./js/class/LShaped.js"></script>
+<script src="./js/class/TShaped.js"></script>
+<script src="./js/class/ZShaped.js"></script>
+<script src="./js/class/SquareShaped.js"></script>
+<script src="./js/class/IShaped.js"></script>
+<script src="./checkVar.js"></script>
+<script src="./xephinh.js"></script>
+
+</html>

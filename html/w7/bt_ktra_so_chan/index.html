@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="number">Nhập số</label><br>
+    <input type="number" id="number">
+    <button onclick="checkNumber()">Kiểm tra</button>
+</body>
+<script>
+    function checkNumber() {
+        let number = document.getElementById("number").value;
+        if (number % 2 === 0) {
+            alert(`${number} là số chẵn`);
+        } else {
+            alert(`${number} không phải là số chẵn`);
+        }
+        document.getElementById("number").value = ""
+    }
+</script>
+</html>

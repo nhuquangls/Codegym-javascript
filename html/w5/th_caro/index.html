@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 1px solid;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <table id="table"></table>
+    </div>
+    <button onclick="changeValue()">change value</button>
+</body>
+<script>
+    let data = "";
+    let rows = +prompt("Nhập hàng");
+    let cols = +prompt("Nhập cột");
+    let count = 0;
+    for (let i = 0; i < rows; i++) {
+        data += "<tr>";
+        for (let j = 0; j < cols; j++) {
+            data += "<td id = '" + i + '' + j + "'></td>"
+        }
+        data += "</tr>"
+    }
+    document.getElementById("table").innerHTML = data
+    function changeValue() {
+        count ++;
+        let x = prompt("X")
+        let y = prompt("Y")
+        if (count % 2 === 0) {
+            document.getElementById((x-1) + "" + (y-1)).innerHTML = "O"
+        } else {
+            document.getElementById((x-1) + "" + (y-1)).innerHTML = "X"
+        }
+        
+    }
+</script>
+</html>

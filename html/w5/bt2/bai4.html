@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number">
+    <button onclick="addNumber();">Add</button>
+    <button onclick="reverseArr();">Reverse</button>
+    <h1 id="display"></h1>
+</body>
+<script>
+    let arr = [];
+    function addNumber() {
+        let number = document.getElementById("number").value;
+        arr.push(number);
+        document.getElementById("number").value = "";
+        document.getElementById("display").innerHTML = arr
+    }
+    function reverseArr() {
+        arr.reverse();
+        document.getElementById("display").innerHTML = arr
+    }
+</script>
+</html>

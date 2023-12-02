@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="display()">Display</button>
+    <!-- sự kiện onclick: là sự kiện xảy ra trên thẻ HTML
+    khi người dùng click vào thẻ HTML đó
+    thẻ HTML nào cũng có thể click được -->
+    <div id="result"></div>
+    <div id="result1"></div>
+    <!-- <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table> -->
+</body>
+<script>
+    function display() {
+        let n = +prompt("Nhập: ")
+        let data = "<table>"
+        for(let i = 1; i <= n; i++) {
+            data += "<tr>"
+            data += "<td>1</td>"
+            data += "<td>2</td>"
+            data += "<td>3</td>"
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("result").innerHTML = data
+        document.getElementById("result1").innerText = data
+    }
+
+    // tìm hiểu về for lồng nhau: trong 1 vòng for, có chứa thêm 1 vòng for khác
+    // for lồng 2 tầng (không tìm hiểu thêm đến 3,4,5 tầng)
+</script>
+</html>

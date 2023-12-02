@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="findMax()">Click me</button>
+</body>
+<script>
+    function findMax() {
+        let n = +prompt("Nhập độ dài mảng muốn tạo: ")
+        let arr = []
+        for(let i = 0; i < n; i++) {
+            let data = +prompt("Nhập vào số thứ " + (i+1) + " :")
+            arr.push(data)
+        }
+
+        let max = arr[0]
+        let indexMax = 0
+
+        for(let i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i]
+                indexMax = i
+            }
+        }
+        alert("Số lớn nhất là: " + max + "; vị trí là: " + indexMax)
+        alert(arr)
+    }
+</script>
+</html>

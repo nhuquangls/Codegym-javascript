@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div-name {
+            text-align: left;
+            width: 600px;
+            padding: 20px;
+            background-color: rgb(202, 199, 199);
+        }
+
+        table {
+            width: 600px;
+            text-align: left;
+        }
+
+        tr {
+            text-align: left;
+        }
+
+        button {
+            color: white;
+            background-color: green;
+            border: none;
+            padding: 5px 15px;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: whitesmoke;
+        }
+        th {
+            text-align: left;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body onload="update()">
+    <label for="name"><b>Add New Product</b></label><br>
+    <div id="div-name">
+        <input type="text" id="name" placeholder="New Product">
+        <input type="text" id="price" placeholder="100.000đ">
+        <button onclick="addProduct()">Add</button><br><br>
+        <input type="text" id="editName" placeholder="Edit Product Name">
+        <input type="text" id="editPrice" placeholder="Edit Price">
+        <button onclick="edit2()">Edit</button>
+    </div>
+    <h3>Display All Product</h3>
+    <table id="table">
+    
+    </table>
+</body>
+<script>
+    let arr = []
+    let display = ''
+    let indexEdit = 0
+
+    class Product {
+        constructor(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+    }
+    function addProduct() {
+        let name = document.getElementById('name').value
+        document.getElementById('name').value = ''
+        let price = document.getElementById('price').value
+        document.getElementById('price').value = ''
+        arr.push(new Product(name, price))
+        update()
+    }
+    function deleteProduct(index) {
+        arr.splice(index, 1)
+        update()
+    }
+    function editProduct(index) {
+        document.getElementById('editName').value = arr[index].name;
+        document.getElementById('editPrice').value = arr[index].price;
+        indexEdit = index
+    }
+    function edit2() {
+        if (indexEdit === -1) return
+        arr[indexEdit].name = document.getElementById('editName').value
+        arr[indexEdit].price = document.getElementById('editPrice').value
+        document.getElementById('editName').value = ''
+        document.getElementById('editPrice').value = ''
+        indexEdit = -1
+        update()
+
+    }
+    function update() {
+        display = `<tr><th>Product Name</th><th>Price</th><th colspan='2' style = 'text-align: right'>${arr.length} Product</th></tr>`
+        for (let i = 0; i < arr.length; i++) {
+            display += `<tr>
+                            <td>
+                                ${arr[i].name}
+                            </td>
+                            <td>
+                                ${arr[i].price}đ
+                            </td>
+                            <td>
+                                <button onclick='editProduct(${i})'>Edit</button>
+                            </td>
+                            <td>
+                                <button onclick='deleteProduct(${i})'s>Delete</button>
+                            </td>
+                        </tr>`
+        }
+        document.getElementById('table').innerHTML = display
+    }
+
+</script>
+
+</html>

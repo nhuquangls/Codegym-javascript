@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="result"></h2>
+</body>
+<script>
+    let number = prompt("Nhập số");
+    let result = ""
+    if (number == 1) {
+        result = "1";
+    } else if (number == 2) {
+        result = "1, 1";
+    } else {
+        result = "1, 1";
+        let a = 1;
+        let b = 1;
+        for (let i = 2; i < number; i++ ) {
+            let c  = a + b;
+            result += ", " + c;
+            a = b;
+            b = c;
+        } 
+    }
+    document.getElementById("result").innerHTML = "Dãy số Fibonacci gồm " + number + " số: " + result;
+</script>
+</html>

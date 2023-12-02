@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .radio-label {
+          display: inline-flex;
+          margin-right: 10px; 
+          margin-top: -10px;
+          vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <label class="info-label">
+            <p style="margin-bottom: 1px;"><b>Họ và tên:</b></p>
+            <input type="text" name="name">
+        </label>
+        <label class="info-label">
+            <p style="margin-bottom: 1px;"><b>Email:</b></p>
+            <input type="email" name="email">
+        </label>
+        <label class="info-label">
+            <p style="margin-bottom: 1px;"><b>Số điện thoại:</b></p>
+            <input type="number" name="phone">
+        </label>
+        <label class="info-label">
+            <p style="margin-bottom: 1px;"><b>Giới tính:</b></p>
+            <label class="radio-label">
+                <input type="radio" name="gender" value="male">
+                <p><b>Nam</b></p>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="gender" value="female">
+                <p><b>Nữ</b></p>
+            </label>
+            <br>
+        </label>
+        <button type="submit"><b>Đắng ký</b></button>
+    </form>
+</body>
+</html>

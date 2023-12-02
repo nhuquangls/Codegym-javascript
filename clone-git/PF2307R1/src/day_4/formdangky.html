@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="fullname">Họ và tên:</label><br>
+        <!-- thẻ label: dùng để gắn nhãn cho các thành phần html 
+        việc gán nhãn sẽ thông qua thuộc tính id -->
+        <!-- thuộc tính id: định danh duy nhất cho thẻ html, thường dùng để truy cập đến phần tử html sau này -->
+        <input style="margin-bottom: 20px;" type="text" id="fullname" name="fullname"><br>
+        <!-- thuộc tính name: quy định tên gọi của dữ liệu gửi về từ form  -->
+        <label >Email:</label><br>
+        <input style="margin-bottom: 20px;" type="email" name="email"><br>
+        <label>Số điện thoại: </label><br>
+        <input style="margin-bottom: 20px;" type="text"  name="phone"><br>
+        <label for="male">Giới tính:</label><br>
+        <input type="radio" id="male" name="gender">Nam <input type="radio" name="gender">Nữ
+        <!-- khi dùng input dạng radio, các giá trị đại diện cho cùng 1 trường dữ liệu 
+        thì cần được đặt tên giống nhau để đảm bảo sử dụng đúng radio -->
+        <!-- tên định danh của input là do ltv đặt -->
+        <br>
+        <button style="margin-top: 20px;">Đăng ký</button>
+    </form>
+</body>
+</html>

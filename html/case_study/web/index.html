@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="div-all">
+        <header>
+            <div class="header-element">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="logo" id="logo">
+                </a>
+            </div>
+            <div class="header-element" id="search">
+                <input type="text" id="search-input" placeholder="Nhập tên game...">
+                <img src="img/search-regular-24.png" alt="search" class="icon-element" id="search-icon">
+            </div>
+            <div class="header-element">
+                <img src="img/tip.svg" alt="tip" class="icon-element">
+                <h3>Hướng dẫn</h3>
+            </div>
+            <div class="header-element">
+                <img src="img/play.svg" alt="play" class="icon-element">
+                <h3>Video</h3>
+            </div>
+            <div class="header-element">
+                <img src="img/notifications.svg" alt="noti" class="icon-element" id="noti">
+            </div>
+            <div class="header-element">
+                <img src="img/user.svg" alt="user" class="icon-element">
+                <h3 onclick="formLogin()" id="info">Đăng nhập</h3>
+            </div>
+        </header>
+        <div class="main-menu">
+            <ul class="menu">
+                <div style="display: flex; align-items: center;">
+                    <img src="img/menu.png" alt="menu" class="icon-element">
+                    <p style="color: yellow;">Danh mục</p>
+                </div>
+                <li>Game Hay</li>
+                <li>Game Hot</li>
+                <li>Game Mới</li>
+                <li>Game Y8</li>
+                <li>Game 2 người</li>
+                <li>Pokemon</li>
+                <li>Trắc nghiệm</li>
+                <li>Among Us</li>
+                <li>Pikachu</li>
+                <li>Thời trang</li>
+            </ul>
+        </div>
+        <div id="list-game">
+        </div>
+    </div>
+    <div id="login-background">
+        <div class="body-login">
+            <div class="header-login">
+                <h4 style="margin-right: 5%;">Login</h4>
+            </div>
+            <div class="content-login">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username">
+                </div><br>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div><br>
+                <div>
+                    <button onclick="cancelLogin()">Cancel</button>
+                    <button onclick="enterLogin()">Enter</button>
+                </div>
+                <h5 style="color: red; text-align: center;" id="noti-login">* Thông tin đăng nhập không đúng</h5>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

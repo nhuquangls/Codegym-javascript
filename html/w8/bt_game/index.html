@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="display()">
+    <canvas id="myCanvas" width="700" height="500" style="border: solid 1px;"></canvas><br>
+    <button onclick="play()">Play</button>
+    <button onclick="moveToLeft()">←</button>
+    <button onclick="moveToRight()">→</button><br><br>
+    <h1 id="score"></h1>
+
+</body>
+<script>
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let score = 0;
+    let gameOver = true;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    class Box {
+        constructor(xPosittion, yPosittion) {
+            this.xPosittion = xPosittion;
+            this.yPosittion = yPosittion;
+            this.width = 50;
+            this.height = 50;
+        }
+    }
+    let boxes = []
+    for (let i = 0; i < 14; i++) {
+        boxes.push(new Box(i * 50, 0));
+    }
+    let myBox = new Box(300, 450);
+
+    function display() {
+        ctx.clearRect(0, 0, 700, 500);
+        ctx.beginPath();
+        ctx.fillStyle = "blue";
+        ctx.fillRect(myBox.xPosittion, myBox.yPosittion, myBox.width, myBox.height)
+        boxes.forEach(box => {
+            ctx.beginPath();
+            ctx.fillStyle = "gray";
+            ctx.fillRect(box.xPosittion, box.yPosittion, box.width, box.height);
+        });
+    }
+
+    function play() {
+        gameOver = false;
+        let run = [];
+        startScore();
+
+        for (let i = 0; i < boxes.length; i++) {
+            run[i] = setInterval(function () {
+                if (boxes[i].yPosittion === 450) {
+                    boxes[i].yPosittion = 0;
+                }
+                boxes[i].yPosittion += 10;
+                display();
+                if (boxes[i].xPosittion == myBox.xPosittion && (myBox.yPosittion - boxes[i].yPosittion) - 50 < 0) {
+                    for (let k = 0; k < boxes.length; k++) {
+                        clearInterval(run[k]);
+                    }
+                    alert("Game Over");
+                    gameOver = true;
+                    return;
+                }
+            }, Math.floor(Math.random() * (200 - 50 + 1)) + 50);
+        }
+    }
+    function moveToLeft() {
+        if (myBox.xPosittion == 0) {
+            return;
+        }
+        myBox.xPosittion -= 50
+        display();
+    }
+    function moveToRight() {
+        if (myBox.xPosittion == 650) {
+            return;
+        }
+        myBox.xPosittion += 50
+        display();
+    }
+    function startScore() {
+        let count = setInterval(function () {
+            score += 50;
+            document.getElementById("score").innerHTML = "Score: " + score;
+            if (gameOver) {
+                clearInterval(count);
+            }
+        }, 10);
+
+    }
+    document.addEventListener("keydown", function (event) {
+        if (event.keyCode === 37) {
+            moveToLeft();
+        } else if (event.keyCode === 39) {
+            moveToRight();
+        }
+    });
+
+</script>
+
+</html>
+
+

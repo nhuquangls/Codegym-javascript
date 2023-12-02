@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showMessage1()">aleart</button>
+    <button onclick="showMessage2()">innerHTML</button>
+    <button onclick="showMessage3()">document.write</button>
+    <button onclick="showMessage4()">console.log</button>
+    <h1 id="display"></h1>
+</body>
+<script>
+    function showMessage1() {
+        alert('Hello world')
+    }
+    function showMessage2() {
+        document.getElementById('display').innerHTML = 'Hello world'
+    }
+    function showMessage3() {
+        document.write('Hello world')
+    }
+    function showMessage4() {
+        console.log('Hello world')
+    }
+</script>
+</html>

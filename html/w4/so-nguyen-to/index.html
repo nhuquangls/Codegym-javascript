@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+</body>
+<script>
+    let number = +prompt("Nhập số lượng số nguyên tố cần in: ")
+    let listNumber = "2"
+    let i = 1
+    let k = 3;
+        while (i < number) {
+            let check = true;                           //mặc định K nguyên tố
+            for (let j = 2; j < k; j++) {                   //check lại K
+                if (k % j == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check == true) {                        //if K nguyên tố, add vào list
+                listNumber += ", " + k;                 //i, k tăng 1
+                i++;
+                k++;
+            } else {                                    //else K tăng 1, chạy lại while
+                k++;
+            }
+        }
+    document.getElementById("result").innerHTML = listNumber
+</script>
+</html>

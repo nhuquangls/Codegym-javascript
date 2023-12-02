@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+</body>
+<script>
+    let sum = 0;
+    let listNumber = ""
+    let i = 0;
+    let j = 7;
+    while (i < 30) {
+        while(true) {
+            if (j % 7 == 0) {
+                sum += j;
+                j++;
+                i++;
+                break;
+            }
+            j++;
+        }
+    }
+    document.getElementById("result").innerHTML = "Tổng của 30 số đầu tiên chia hết cho 7 là: " + sum;
+
+</script>
+</html>

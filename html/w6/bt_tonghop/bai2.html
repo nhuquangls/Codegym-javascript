@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+</body>
+<script>
+    let arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+    let arr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+    let str = prompt("Input: ");
+    function checkStr(input) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (input === arr1[i]) {
+                return arr2[i]
+            }
+        }
+        return "Not found"
+    }
+    alert(checkStr(str));
+</script>
+</html>

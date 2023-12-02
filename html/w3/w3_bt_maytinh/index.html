@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            color: blue;
+            margin-bottom: 5px;
+            width: 50px;
+            height: 30px;
+        }
+
+        th {
+            text-align: right;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th id="result">0</th>
+        </tr>
+        <tr>
+            <td>
+                <button class="number" value="1">1</button>
+                <button class="number" value="2">2</button>
+                <button class="number" value="3">3</button>
+                <button class="number" value="+">+</button><br>
+                <button class="number" value="4">4</button>
+                <button class="number" value="5">5</button>
+                <button class="number" value="6">6</button>
+                <button class="number" value="-">-</button><br>
+                <button class="number" value="7">7</button>
+                <button class="number" value="8">8</button>
+                <button class="number" value="9">9</button>
+                <button class="number" value="x">x</button><br>
+                <button class="number" value="c">C</button>
+                <button class="number" value="0">0</button>
+                <button class="number" value="=">=</button>
+                <button class="number" value="/">/</button>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    let a = 0
+    let b = 0
+    let operator = ""
+    let number = document.getElementsByClassName("number")
+    let display = ""
+    let calculated = true
+
+    function calculate() {
+        if (calculated == false) {
+            if (operator == "+") {
+                a += b;
+            } else if (operator == "-") {
+                a -= b;
+            } else if (operator == "x") {
+                a *= b;
+            } else if (operator == "/") {
+                a /= b;
+            } else if (operator == "") {
+                a = b;
+                b = 0;
+            }
+        }
+        calculated = true;
+    }
+    for (let i = 0; i < number.length; i++) {
+        number[i].addEventListener("click", function () {
+            switch (number[i].value) {
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                    display += number[i].value;
+                    document.getElementById("result").innerHTML = display;
+                    b = parseInt(display);
+                    calculated = false;
+                    break;
+                case "+":
+                case "-":
+                case "x":
+                case "/":
+                    calculate();
+                    operator = number[i].value;
+                    display = "";
+                    document.getElementById("result").innerHTML = number[i].value
+                    break;
+                case "=":
+                    calculate();
+                    document.getElementById("result").innerHTML = a;
+                    a = 0;
+                    b = 0;
+                    operator = "";
+                    display = "";
+                    break;
+                case "c":
+                    document.getElementById("result").innerHTML = "0";
+                    a = 0;
+                    b = 0;
+                    operator = "";
+                    display = "";
+                    break;
+            }
+        });
+    }
+</script>
+
+</html>

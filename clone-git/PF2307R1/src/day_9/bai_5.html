@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính điểm đại học khối D</h1>
+    <table>
+        <tr>
+            <td>Môn Toán</td>
+            <td><input type="text" id="math"></td>
+        </tr>
+        <tr>
+            <td>Môn Văn</td>
+            <td><input type="text" id="liter"></td>
+        </tr>
+        <tr>
+            <td>Môn Anh</td>
+            <td><input type="text" id="eng"></td>
+        </tr>
+        <tr>
+            <td>Khu vực</td>
+            <td>
+                <select id="kv">
+                    <option value="0.75">KV1</option>
+                    <option value="0.5">KV2-NT</option>
+                    <option value="0.25">KV2</option>
+                    <option value="0">KV3</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button onclick="m1()">Tính điểm</button>
+    <p style="color: red;" id="result"></p>
+</body>
+<script>
+    function m1() {
+        let math = +document.getElementById("math").value 
+        let liter = +document.getElementById("liter").value 
+        let eng = +document.getElementById("eng").value 
+        let kv = +document.getElementById("kv").value 
+
+        if (math < 0 || math > 10 || liter < 0 || liter > 10 || eng < 0 || eng > 10) {
+            alert("Điểm thi nhập không chính xác, nhập lại!")
+        } else {
+            let point = math + liter + eng + kv
+            document.getElementById("result").innerHTML = "Tổng điểm ĐH khối D của bạn là: " + point
+        }
+   }
+</script>
+</html>

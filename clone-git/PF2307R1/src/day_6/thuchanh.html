@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="m1()">Click</button>
+</body>
+<script>
+    // bài toán đưa ra: nhập vào 2 số: chiều dài và chiều rộng của 1 hình chữ nhật
+    // tính toán diện tích và đưa ra kết quả
+    // tính toán chu vi và đưa ra kết quả
+    function m1() {
+
+        let chieuDai
+        let chieuRong
+
+        chieuDai = prompt("Nhập chiều dài (m): ")
+        chieuDai = parseInt(chieuDai)
+        // hàm parseInt() sẽ chuyển 1 giá trị từ chuỗi thành 1 số nguyên
+        // ngắn gọn: chieuDai = parseInt(prompt("Nhập chiều dài (m): "))
+
+        // hàm prompt() của Js sẽ luôn luôn trả về kiểu dữ liệu là String
+        // sử dụng String và toán tử + => toán tử cộng chuỗi
+        chieuRong = +prompt("Nhập chiều rộng (m): ")
+        // thêm dấu cộng trước các giá trị => chuyển về số
+
+        // KEYWORD: TÌM HIỂU VỀ CƠ CHẾ TỰ ĐỘNG ÉP KIỂU CỦA JS
+        let dienTich = chieuDai * chieuRong
+        let chuVi = (chieuDai + chieuRong) * 2
+        alert("Diện tích hình chữ nhật là: " + dienTich + "m2")
+        alert("Chu vi hình chữ nhật là: " + chuVi + "m")
+    }
+</script>
+</html>

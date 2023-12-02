@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 1px solid;
+        }
+        table {
+            width: 100%;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <table id="table"></table>
+</body>
+<script>
+    let result = ""
+    for (let i = 1; i < 10; i++) {
+        result += "<tr>"
+        for (let j = 2; j < 10; j++) {
+            result += "<td>" + j + "x" + i + "=" + i*j + "</td>"
+        }
+        result += "</tr>"
+    }
+    document.getElementById("table").innerHTML = result
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="display"></h2>
+</body>
+<script>
+    let arr = new Array(10);
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Math.floor(Math.random()*20) + 1;
+    }
+    let arr2 = arr.filter(function(number) {
+        return number >= 10;
+    });
+    document.getElementById("display").innerHTML = "Mảng 10 phần tử: "+ arr + "<br>" + "Số lớn hơn hoặc bằng 10: " + arr2
+</script>
+</html>

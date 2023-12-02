@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000px" height="700px" style="border:1px solid #d3d3d3;"></canvas>
+</body>
+<script>
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let yPosistion = 20;
+    let down = true;
+    function createRect() {
+        ctx.clearRect(0, 0, 1000, 700);
+        if (down) {
+            yPosistion += 5;
+            if (yPosistion > 600) {
+                down = false;
+            }
+        } else {
+            yPosistion -= 5;
+            if (yPosistion < 0) {
+                down = true;
+            }
+        }
+        ctx.beginPath();
+        ctx.fillStyle = '#fa4b2a';
+        ctx.fillRect(20, yPosistion, 150, 100);
+    }
+    setInterval(createRect, 20);
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="year">Năm: </label>
+    <input type="number" id="year" min="1800" max="2023">
+    
+    <label for="month">Tháng: </label>
+    <input type="number" id="month" min="1" max="12">
+
+    <label for="date">Ngày: </label>
+    <input type="number" id="date" min="1" max="31">
+
+    <button onclick="showDate()">Show date</button>
+    <h1 id="show"></h1>
+</body>
+    <script>
+        function showDate() {
+            let date = document.getElementById("date").value;
+            let month = document.getElementById("month").value;
+            let year = document.getElementById("year").value;
+            if ( year > 2023 || year < 1800 || month > 12 || month <1 || date >31 || date <1
+                || (month == 2 && date > 29) || ((month == 4 || month == 6 || month == 8 || month == 10 || month == 12) && date > 30)
+                ) {
+                    document.getElementById("show").innerHTML = "Nhập sai ngày tháng";
+                } else {
+                    document.getElementById("show").innerHTML = date + "-" + month+ "-" + year;
+                } ;
+            
+        }
+    </script>
+</html>

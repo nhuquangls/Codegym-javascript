@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="m1()">Click</button>
+    <button ondblclick="m1()">Click</button>
+    <p onmouseover="m1()" style="width: 400px;">PF2307R1</p>
+    <input type="text" onchange="m1()">
+    <input type="text" oninput="m2()" id="m2">
+</body>
+<script>
+    function m1() {
+        alert("HelloWorld")
+    }
+
+    function m2() {
+        let str = document.getElementById("m2").value 
+        console.log(str)
+    }
+</script>
+</html>

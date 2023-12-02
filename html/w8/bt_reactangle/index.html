@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="showRectangle()">
+    <button onclick="change()">Change</button><br><br>
+    <canvas id="myCanvas" width="700" height="500" style="border: solid 1px;"></canvas><br>
+    <h3 id="result"></h3>
+</body>
+<script>
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        getArea() {
+            return this.width * this.height;
+        }
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+    }
+    let myRectangle = new Rectangle(200, 150);
+    function showRectangle() {
+        ctx.clearRect(0, 0, 700, 500);
+        ctx.beginPath();
+        ctx.fillStyle = "gray";
+        ctx.fillRect(0, 0, myRectangle.width, myRectangle.height);
+        document.getElementById("result").innerHTML = "Width: " + myRectangle.width + ", Height: " + myRectangle.height + "<br>"
+                                                    + "Area: " + myRectangle.getArea() + "<br>Perimeter: " + myRectangle.getPerimeter()
+    }
+    function change() {
+        let newWidth = parseFloat(prompt("Width"));
+        let newHeight = parseFloat(prompt("Height"));
+        if (isNaN(newWidth) || isNaN(newHeight)) {
+            alert("Invalid input");
+        } else {
+            myRectangle.width = newWidth;
+            myRectangle.height = newHeight;
+            showRectangle();
+        }
+    }
+    </script>
+</html>

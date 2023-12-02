@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="before"></h1>
+    <h1 id="after"></h1>
+</body>
+<script>
+    let number = prompt("Nhập số: ");
+    let arrNumber = number.split("");
+    let newArr = arrNumber.map(function (string){
+        return parseInt(string);
+    });
+    for (let i = 0; i < newArr.length - 1; i++) {
+        if (newArr[i] % 2 == 0 && newArr[i+1] % 2 == 0) {
+            newArr.splice(i+1, 0, "-");
+            i++;
+        }
+    }
+    document.getElementById("before").innerHTML = "Before: " + number;
+    document.getElementById("after").innerHTML = "After: " + newArr.join("");
+</script>
+</html>
